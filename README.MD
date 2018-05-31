@@ -9,3 +9,5 @@ app.get('/', function (request, response) {
 	response.sendFile(__dirname + '/dist/index.html');
 });
 
+# References
+https://medium.freecodecamp.org/i-built-this-now-what-how-to-deploy-a-react-app-on-a-digitalocean-droplet-662de0fe3f48?gi=acaafc57cf45

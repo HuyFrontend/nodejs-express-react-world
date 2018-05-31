@@ -1,6 +1,7 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 8080;
+const app = express();
 
 app.use(bodyParser.json()); //for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -35,6 +36,6 @@ app.delete('/user/:username', function (request, response) {
 	response.status(204).send();
 });
 
-app.listen(8888, function () {
-	console.log('App listening on port 8888');
+app.listen(port, function () {
+	console.log(`App listening on port ${port}`);
 });
