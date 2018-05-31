@@ -10,7 +10,18 @@ app.get('/', function (request, response) {
 	// response.send('Hello World..!! From Express APP..!!');
 	response.sendFile(__dirname + '/dist/index.html');
 });
-
+app.get('*', function (request, response) {
+	response.sendFile(__dirname + '/dist/index.html');
+});
+app.get('/home', function (request, response) {
+	response.sendFile(__dirname + '/dist/index.html');
+});
+app.get('/about', function (request, response) {
+	response.sendFile(__dirname + '/dist/index.html');
+});
+app.get('/contact', function (request, response) {
+	response.sendFile(__dirname + '/dist/index.html');
+});
 app.get('/users', function (request, response) {
 	response.json({
 	"username" : "JohnDoe",
