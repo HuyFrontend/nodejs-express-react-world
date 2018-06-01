@@ -48,5 +48,6 @@ app.delete('/user/:username', function (request, response) {
 });
 
 app.listen(port, function () {
-	console.log(`App listening on port ${port}`);
+	const message = `App listening on port ${port}`;
+	console.log(`\x1b[32m%s\x1b[0m`, message);
 });
