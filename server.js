@@ -14,39 +14,15 @@ app.get('/', function (request, response) {
 app.get('*', function (request, response) {
 	response.sendFile(__dirname + '/dist/index.html');
 });
-app.get('/home', function (request, response) {
-	response.sendFile(__dirname + '/dist/index.html');
-});
-app.get('/about', function (request, response) {
-	response.sendFile(__dirname + '/dist/index.html');
-});
-app.get('/contact', function (request, response) {
-	response.sendFile(__dirname + '/dist/index.html');
-});
-app.get('/users', function (request, response) {
-	response.json({
-	"username" : "JohnDoe",
-	"empId" : 1234,
-	"dob" : "11-1-1990"
-	})
-});
-
-app.post('/user', function (request, response) {
-	console.log(request.body);
-	response.type('application/json');
-	response.status(201).send(request.body);
-});
-
-app.put('/user/:username', function (request, response) {
-	console.log(request.params.username);
-	response.type('application/json');
-	response.status(200).send(["updated user"]);
-});
-
-app.delete('/user/:username', function (request, response) {
-	console.log(request.params.username);
-	response.status(204).send();
-});
+// app.get('/home', function (request, response) {
+// 	response.sendFile(__dirname + '/dist/index.html');
+// });
+// app.get('/about', function (request, response) {
+// 	response.sendFile(__dirname + '/dist/index.html');
+// });
+// app.get('/contact', function (request, response) {
+// 	response.sendFile(__dirname + '/dist/index.html');
+// });
 
 app.listen(port, function () {
 	const message = `App listening on port ${port}`;
