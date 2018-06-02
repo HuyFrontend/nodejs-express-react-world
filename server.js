@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const open = require('open');
 const port = process.env.PORT || 1607;
 const app = express();
 
@@ -50,4 +51,5 @@ app.delete('/user/:username', function (request, response) {
 app.listen(port, function () {
 	const message = `App listening on port ${port}`;
 	console.log(`\x1b[32m%s\x1b[0m`, message);
+	open(`http://127.0.0.1:${port}`);
 });
