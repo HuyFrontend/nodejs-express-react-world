@@ -4,9 +4,7 @@
   "description": "build react application in express node",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "open": "start http://localhost:1607"
+    "start": "node server.js"
   },
   "keywords": [
     "react-application",
