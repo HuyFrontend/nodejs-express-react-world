@@ -14,9 +14,12 @@ app.get('/', function (request, response) {
 app.get('*', function (request, response) {
 	response.sendFile(__dirname + '/dist/index.html');
 });
-// app.get('/home', function (request, response) {
-// 	response.sendFile(__dirname + '/dist/index.html');
-// });
+app.get('*.js', function (req, res, next) {
+	debugger;
+	req.url = req.url + '.gz';
+	res.set('Content-Encoding', 'gzip');
+	next();
+});
 // app.get('/about', function (request, response) {
 // 	response.sendFile(__dirname + '/dist/index.html');
 // });
