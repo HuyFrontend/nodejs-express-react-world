@@ -22,3 +22,10 @@ http://localhost:1607/
 http://localhost:1607/home
 # References
 https://medium.freecodecamp.org/i-built-this-now-what-how-to-deploy-a-react-app-on-a-digitalocean-droplet-662de0fe3f48?gi=acaafc57cf45
+# Want to load app.bundle.js.gz instead of .js (reduce js file size)
+app.get('*.js', function (req, res, next) {
+	req.url = req.url + '.gz';
+	res.set('Content-Encoding', 'gzip');
+	res.set('Content-Type', 'text/javascript');
+	next();
+});
