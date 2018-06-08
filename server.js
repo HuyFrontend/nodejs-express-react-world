@@ -8,6 +8,7 @@ const app = express();
 app.use(bodyParser.json()); //for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use( express.static( `${__dirname}/dist` ) );
+
 app.use(compression());
 app.get('/', function (request, response) {
 	// response.send('Hello World..!! From Express APP..!!');
@@ -16,7 +17,6 @@ app.get('/', function (request, response) {
 app.get('*', function (request, response) {
 	response.sendFile(__dirname + '/dist/index.html');
 });
-
 // app.get('/about', function (request, response) {
 // 	response.sendFile(__dirname + '/dist/index.html');
 // });
