@@ -5,12 +5,12 @@ $ node index.js/ server.js
 $ npm run build
 - note: remove registerServiceWorker(); import registerServiceWorker from ‘register-service-worker’
 - copy all files dist folder and paste it in root of server application `remove bundle.map.js` inside dist
-# Step 2 Server: in index.js
-app.use( express.static( `${__dirname}/dist`;
-app.get('*', function (request, response) {
+# Step 2 Server: in index.js <Use app.get/ firt app.use static for best performance>
+app.get('/', function (request, response) {
 	response.sendFile(__dirname + '/dist/index.html');
 });
-app.get('/', function (request, response) {
+app.use( express.static( `${__dirname}/dist`;
+app.get('*', function (request, response) {
 	response.sendFile(__dirname + '/dist/index.html');
 });
 app.get('/home', function (request, response) {
